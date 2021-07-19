@@ -1,0 +1,19 @@
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:6868/eureka/
+
+server:
+  port: 9000
+
+spring:
+  application:
+    name: teambition-zipkin-server
+
+#    spring:
+#      zipkin:
+#        base-url: http://172.31.32.14:9411
+#        enabled: true
+#        locator:
+#          discovery:
+#            enabled: true

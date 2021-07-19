@@ -1,0 +1,44 @@
+server:
+  port: 9012
+spring:
+  application:
+    name: teambition-web
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    prefer-ip-address: true   #模块之间可以跨域访问
+zuul:
+  routes:
+    teambition-base:
+      path: /base/**
+      serviceId: teambition-base
+    teambition-user:             #活动
+      path: /user/**            #配置请求url的请求规则
+      serviceId: teambition-user #指定Eureka注册中心的服务id
+    teambition-qa:             #活动
+      path: /qa/**            #配置请求url的请求规则
+      serviceId: teambition-qa #指定Eureka注册中心的服务id
+    teambition-friend:             #活动
+      path: /friend/**            #配置请求url的请求规则
+      serviceId: teambition-friend #指定Eureka注册中心的服务id
+    teambition-article:             #活动
+      path: /article/**            #配置请求url的请求规则
+      serviceId: teambition-article #指定Eureka注册中心的服务id
+    teambition-gathering:             #活动
+      path: /gathering/**            #配置请求url的请求规则
+      serviceId: teambition-gathering #指定Eureka注册中心的服务id
+    teambition-recruit:             #活动
+      path: /recruit/**            #配置请求url的请求规则
+      serviceId: teambition-recruit #指定Eureka注册中心的服务id
+    teambition-spit:             #活动
+      path: /spit/**            #配置请求url的请求规则
+      serviceId: teambition-spit #指定Eureka注册中心的服务id
+    teambition-sms:             #活动
+      path: /sms/**            #配置请求url的请求规则
+      serviceId: teambition-sms #指定Eureka注册中心的服务id
+    teambition-search:             #活动
+      path: /search/**            #配置请求url的请求规则
+      serviceId: teambition-search #指定Eureka注册中心的服务id
